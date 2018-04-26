@@ -16,6 +16,7 @@ static void help(){
 	
 }
 
+void cameraCheck (cv::VideoCapture& cap);
 
 
 

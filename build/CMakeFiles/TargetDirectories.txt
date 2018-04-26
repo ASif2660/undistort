@@ -1,4 +1,0 @@
-/home/nvidia/undistort/build/CMakeFiles/edit_cache.dir
-/home/nvidia/undistort/build/CMakeFiles/rebuild_cache.dir
-/home/nvidia/undistort/build/CMakeFiles/undistort.dir
-/home/nvidia/undistort/build/CMakeFiles/undistortLib.dir
