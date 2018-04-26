@@ -10,6 +10,9 @@ find_package( OpenCV REQUIRED )
 
 #craete libraries 
 
+add_library(undistortLib STATIC src/undistort.cpp )
+
+target_include_directories(undistortLib PUBLIC include)
 
 #create target libs 
 
@@ -18,7 +21,7 @@ find_package( OpenCV REQUIRED )
 #creating executable targets
 add_executable (undistort src/main.cpp )
 
-target_link_libraries( undistort ${OpenCV_LIBS} ) # JTx2 supports 2.4.x series 
+target_link_libraries( undistort ${OpenCV_LIBS} undistortLib ) # JTx2 supports 2.4.x series 
 
 
 
