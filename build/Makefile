@@ -123,6 +123,19 @@ undistort/fast:
 	$(MAKE) -f CMakeFiles/undistort.dir/build.make CMakeFiles/undistort.dir/build
 .PHONY : undistort/fast
 
+#=============================================================================
+# Target rules for targets named undistortLib
+
+# Build rule for target.
+undistortLib: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 undistortLib
+.PHONY : undistortLib
+
+# fast build rule for target.
+undistortLib/fast:
+	$(MAKE) -f CMakeFiles/undistortLib.dir/build.make CMakeFiles/undistortLib.dir/build
+.PHONY : undistortLib/fast
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -150,6 +163,33 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/undistort.dir/build.make CMakeFiles/undistort.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/undistort.o: src/undistort.cpp.o
+
+.PHONY : src/undistort.o
+
+# target to build an object file
+src/undistort.cpp.o:
+	$(MAKE) -f CMakeFiles/undistortLib.dir/build.make CMakeFiles/undistortLib.dir/src/undistort.cpp.o
+.PHONY : src/undistort.cpp.o
+
+src/undistort.i: src/undistort.cpp.i
+
+.PHONY : src/undistort.i
+
+# target to preprocess a source file
+src/undistort.cpp.i:
+	$(MAKE) -f CMakeFiles/undistortLib.dir/build.make CMakeFiles/undistortLib.dir/src/undistort.cpp.i
+.PHONY : src/undistort.cpp.i
+
+src/undistort.s: src/undistort.cpp.s
+
+.PHONY : src/undistort.s
+
+# target to generate assembly for a file
+src/undistort.cpp.s:
+	$(MAKE) -f CMakeFiles/undistortLib.dir/build.make CMakeFiles/undistortLib.dir/src/undistort.cpp.s
+.PHONY : src/undistort.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -159,9 +199,13 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... undistort"
+	@echo "... undistortLib"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/undistort.o"
+	@echo "... src/undistort.i"
+	@echo "... src/undistort.s"
 .PHONY : help
 
 
