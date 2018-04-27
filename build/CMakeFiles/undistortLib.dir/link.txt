@@ -1,0 +1,2 @@
+/usr/bin/ar qc libundistortLib.a  CMakeFiles/undistortLib.dir/src/undistort.cpp.o
+/usr/bin/ranlib libundistortLib.a
