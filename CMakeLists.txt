@@ -15,16 +15,22 @@ endif()
 
 find_package( OpenCV REQUIRED )
 
-#library 
+#library undistort 
 
 add_library(undistortLib STATIC src/undistort.cpp )
 
-target_include_directories (undistortLib PUBLIC include ${OpenCV_INCLUDE_DIR})
+target_include_directories (undistortLib PUBLIC include ${OpenCV_INCLUDE_DIR} )
 
 target_link_libraries(undistortLib ${OpenCV_LIBS})
 
 
+#library device 
 
+#add_library( deviceTypeLib STATIC src/deviceType.cpp)
+
+#target_include_directories( deviceTypeLib PUBLIC include )
+
+#target_link_libraries( deviceTypeLib ) 
 
 
 
@@ -33,10 +39,11 @@ target_link_libraries(undistortLib ${OpenCV_LIBS})
 #creating executable targets
 add_executable (undistort src/main.cpp )
 
-target_link_libraries( undistort undistortLib ) # JTx2 supports 2.4.x series 
+target_link_libraries( undistort undistortLib ${OpenCV_LIBS} ) # JTx2 supports 2.4.x series 
 
 
-
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/src/drop.avi
+     DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 
 

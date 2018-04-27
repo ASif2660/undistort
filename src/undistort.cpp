@@ -1,8 +1,7 @@
 #include "undistort.h"
-#include <opencv2/objdetect/objdetect.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/videoio/videoio.hpp>
-#include <opencv2/core/core.hpp>
+
+
+
 
 
 
@@ -27,3 +26,19 @@ void cameraCheck(cv::VideoCapture& cap){
 
 }
 
+
+
+void captureImages( cv::VideoCapture& cap, size_t ImageCount, imageVector& images) {
+	
+	
+	cv::Mat frame; 
+	for(size_t i = 0; i <ImageCount; i++ ){
+		cap >> frame; //gets the frame from camera 
+		cv::imshow("Image", frame);
+		cv::waitKey(1);
+		
+
+	}
+}
+	
+	
